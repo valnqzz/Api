@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AppProvider } from './contexto/contexto';
 
 import './App.css'
 import Listar from './componentes/Listar'
@@ -14,6 +15,7 @@ function App() {
 
 
   return (
+   <AppProvider>
     <Router>
        <Menu />
        <Routes>
@@ -26,8 +28,8 @@ function App() {
         <Route path="/detalle/:name" element={<Detalle />} />
        </Routes>
     </Router>
-    
-   
- )   
+    </AppProvider>
+  );
 }
-export default App
+
+export default App;
